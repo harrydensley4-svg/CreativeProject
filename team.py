@@ -37,12 +37,16 @@ class Team:
     def set_draws(self, draws):
         self.__draws = draws
 
+    def get_salary_cap(self):
+        return self.__salary_cap
+
     wins = property(get_wins, set_wins)
     losses = property(get_losses, set_losses)
     draws = property(get_draws, set_draws)
-
-    def get_salary_cap(self):
-        return self.__salary_cap
+    team_name = property(get_team_name)
+    players = property(get_players)
+    results = property(get_results)
+    salary_cap = property(get_salary_cap)
 
     def __find_player(self, name):
         for player in self.__players:
@@ -85,11 +89,6 @@ class Team:
         else:
             print('This team has no players')
             return False
-
-    name = property(get_team_name)
-    players = property(get_players)
-    results = property(get_results)
-    salary_cap = property(get_salary_cap)
 
     def __str__(self):
         player_list = ''

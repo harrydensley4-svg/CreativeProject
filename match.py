@@ -19,8 +19,8 @@ class Match:
             self.__team_1_score = self.team_1_expected_goals()
             self.__team_2_score = self.team_2_expected_goals()
 
-            team_1_result = (f"{self.__team_1.name}: {self.__team_1_score}-{self.__team_2.name}: {self.__team_2_score}")
-            team_2_result = (f"{self.__team_2.name}: {self.__team_2_score}-{self.__team_1.name}: {self.__team_1_score}")
+            team_1_result = (f"{self.__team_1.team_name}: {self.__team_1_score}-{self.__team_2.team_name}: {self.__team_2_score}")
+            team_2_result = (f"{self.__team_2.team_name}: {self.__team_2_score}-{self.__team_1.team_name}: {self.__team_1_score}")
 
             self.__team_1.results.append(team_1_result)
             self.__team_2.results.append(team_2_result)
@@ -35,7 +35,7 @@ class Match:
                 self.__team_1.draws += 1
                 self.__team_2.draws += 1
 
-            return f"{self.__team_1.name}: {self.__team_1_score}-{self.__team_2.name}: {self.__team_2_score}"
+            return f"{self.__team_1.team_name}: {self.__team_1_score}-{self.__team_2.team_name}: {self.__team_2_score}"
         else:
             return False
 

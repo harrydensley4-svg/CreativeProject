@@ -14,6 +14,9 @@ class Manager:
         if isinstance(team, Team):
             self.__team = team
 
+    def leave_team(self):
+        self.__team = None
+
     def __str__(self):
         if self.__team:
             return f'Manager: {self.__name} | Team: {self.__team.team_name}'

@@ -63,3 +63,8 @@ match3 = Match(man_utd, chelsea)
 print(match3.simulate())
 
 print(league.standings())
+
+print(arsenal)
+
+league2 = League('League 2')
+print(league2.standings())

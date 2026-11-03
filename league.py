@@ -4,10 +4,10 @@ class League:
         self.__teams = {}
 
     def add_team(self, team):
-        if team.name in self.__teams:
+        if team.team_name in self.__teams:
             return False
 
-        self.__teams[team.name] = team
+        self.__teams[team.team_name] = team
         return True
 
     def get_team(self, team_name):
@@ -22,6 +22,8 @@ class League:
 
     def get_teams(self):
         return self.__teams.copy()
+
+    teams = property(get_teams)
 
     def get_all_players(self):
         return [
@@ -38,6 +40,8 @@ class League:
         ]
 
     def standings(self):
+        if len(self.__teams) == 0:
+            return None
         standings = []
         for team in self.__teams.values():
             wins = team.wins
@@ -45,7 +49,7 @@ class League:
             losses = team.losses
 
             standings.append({
-                'Team': team.name,
+                'Team': team.team_name,
                 'Played': wins + draws + losses,
                 'Wins': wins,
                 'Draws': draws,
