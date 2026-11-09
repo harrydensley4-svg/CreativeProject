@@ -1,3 +1,6 @@
+import pytest
+from team import Team
+
 class TestTeam:
     def test_team_name(self, team):
         assert team.team_name == "Team 1"
@@ -50,3 +53,4 @@ class TestTeam:
 
         assert striker.name in result
         assert "Team Rating : 90" in result
+

@@ -20,6 +20,7 @@ chelsea = Team("Chelsea")
 league.add_team(arsenal)
 league.add_team(man_utd)
 league.add_team(chelsea)
+league.add_team(arsenal)
 
 
 # Create players
@@ -68,3 +69,7 @@ print(arsenal)
 
 league2 = League('League 2')
 print(league2.standings())
+
+
+
+match7 = Match('Team1', 'Team2')

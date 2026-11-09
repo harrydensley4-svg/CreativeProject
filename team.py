@@ -1,5 +1,25 @@
 from player import Player
 
+class InsufficientSalaryError(Exception):
+    def __init__(self, message = "This exceeds the salary cap"):
+        super().__init__(message)
+
+class PlayerAlreadyContractedError(Exception):
+    def __init__(self, message = "This Player already has a team"):
+        super().__init__(message)
+
+class PlayerAlreadySignedError(Exception):
+    def __init__(self, message = "This Player is already on your team"):
+        super().__init__(message)
+
+class PlayerNotFoundError(Exception):
+    def __init__(self, message = "This Player is not on your Team"):
+        super().__init__(message)
+
+class NoPlayersOnTeamError(Exception):
+    def __init__(self, message = "This Team has no Players"):
+        super().__init__(message)
+
 class Team:
     def __init__(self, team_name):
         self.__team_name = team_name
@@ -55,39 +75,51 @@ class Team:
         return None
 
     def sign_player(self, player):
-        if not isinstance(player, Player):
+        try:
+            if not isinstance(player, Player):
+                raise TypeError("Should be of Type Player")
+            if player in self.__players:
+                raise PlayerAlreadySignedError()
+            # Checks that the player they are signing is a free agent, if they already belong to a team they can not be signed
+            if player.team is not None:
+                raise PlayerAlreadyContractedError()
+            if player.salary > self.__salary_cap:
+                raise InsufficientSalaryError()
+            else:
+                self.__players.append(player)
+                player.team = self.__team_name
+                self.__salary_cap -= player.salary
+                return True
+        except Exception as e:
+            print(f'{e.__class__.__name__}: {e}')
             return False
-
-        if player in self.__players:
-            return False
-
-        # Checks that the player they are signing is a free agent, if they already belong to a team they can not be signed
-        if player.team is not None:
-            return False
-
-        if player.salary > self.__salary_cap:
-            print('Not enough salary cap remaining')
-            return False
-        
-        self.__players.append(player)
-        player.team = self.__team_name
-        self.__salary_cap -= player.salary
 
     def release_player(self, player):
-        if player not in self.__players:
+        try:
+            if len(self.__players) == 0:
+                raise NoPlayersOnTeamError()
+            if not isinstance(player, Player):
+                raise TypeError("Not type Player")
+            if player not in self.__players:
+                raise PlayerNotFoundError()
+            else:
+                self.__players.remove(player)
+                self.__salary_cap += player.salary
+                player.team = None
+                return True
+        except Exception as e:
+            print(f'{e.__class__.__name__}: {e}')
             return False
 
-        self.__players.remove(player)
-        self.__salary_cap += player.salary
-        player.team = None
-        return True
-
     def team_rating(self):
-        if len(self.__players) != 0:
-            team_rating = sum(player.rating for player in self.__players)/len(self.__players)
-            return team_rating
-        else:
-            print('This team has no players')
+        try:
+            if len(self.__players) == 0:
+                raise NoPlayersOnTeamError()
+            else:
+                team_rating = sum(player.rating for player in self.__players)/len(self.__players)
+                return team_rating
+        except NoPlayersOnTeamError as e:
+            print(f'{e.__class__.__name__}: {e}')
             return False
 
     def __str__(self):

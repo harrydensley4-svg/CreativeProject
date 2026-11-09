@@ -12,3 +12,11 @@ Code review 9.1
 - recommended breaking my test functions into seperate functions so that it would be easier to see where it went wrong if something didnt pass
 - explained how to run the pytest for just one file
 - looked into coverage report - the rubric states a coverage report of 95% currently only at 72% which implies further testing/depth of testing is required.
+
+Code Review 10.1
+ - discussed exception handling -> I had a lot
+ - looked at exception handling in the constructor
+ - raised a query around pytest.raises as it was not working
+ - spoke about using a file for custom exceptions as some were useful across multiple classes
+    - just did them for each class on top of file.
+    - to be cleaner I will create a seperate file.

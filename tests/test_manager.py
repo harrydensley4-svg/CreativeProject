@@ -1,3 +1,6 @@
+import pytest
+from manager import Manager
+
 class TestManager:
     def test_name_property(self, manager):
         assert manager.name == 'Manager 1'
