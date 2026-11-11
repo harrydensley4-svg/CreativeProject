@@ -1,75 +1,85 @@
-from striker import Striker
-from defender import Defender
-from goalkeeper import GoalKeeper
-from midfielder import Midfielder
-from team import Team
 from manager import Manager
-from match import Match
 from league import League
 
 
-# Create the league
-league = League("Premier League")
+# My creative project is a Football Manager Simulator where you can create a team, and simulate matches within a league.
+# The game does not consider promotion or relegation for teams within a league.
+# Create the league.
+premier_league = League('Premier League')
 
-# Create teams
-arsenal = Team("Arsenal")
-man_utd = Team("Manchester United")
-chelsea = Team("Chelsea")
+# Create the teams within the league
+arsenal = premier_league.create_team('Arsenal')
+manchester_united = premier_league.create_team('Manchester United')
+chelsea = premier_league.create_team('Chelsea')
+everton = premier_league.create_team('Everton')
 
-# Add teams to the league dictionary
-league.add_team(arsenal)
-league.add_team(man_utd)
-league.add_team(chelsea)
-league.add_team(arsenal)
+# Give each of the teams a manager (they control player signing/releasing).
+mikel_arteta = Manager('Mikel Arteta')
+michael_carrick = Manager('Michael Carrick')
+xabi_alonso = Manager('Xabi Alonso')
+david_moyes = Manager('David Moyes')
 
+mikel_arteta.join_team(arsenal)
+michael_carrick.join_team(manchester_united)
+xabi_alonso.join_team(chelsea)
+david_moyes.join_team(everton)
 
-# Create players
-striker = Striker("Cristiano Ronaldo", 1, 95, 25_000_000)
-midfielder = Midfielder("Declan Rice", 2, 93, 25_000_000)
-goalkeeper = GoalKeeper("David Raya", 3, 92, 25_000_000)
-defender = Defender("Sergio Ramos", 4, 89, 25_000_000)
-player_1 = Striker("Trash", 5, 12, 20)
+# Create the players within the league.
+david_raya = premier_league.create_player(
+    'Goalkeeper', 'David Raya', 1, 93, 100000)
+declan_rice = premier_league.create_player(
+    'Midfielder', 'Declan Rice', 2, 94, 140000)
+bukayo_saka = premier_league.create_player(
+    'Striker', 'Bukayo Saka', 3, 95, 175000)
+harry_maguire = premier_league.create_player(
+    'Defender', 'Harry Maguire', 4, 89, 92000)
+jordan_pickford = premier_league.create_player(
+    'Goalkeeper', 'Jordan Pickford', 5, 87, 85000)
+jack_grealish = premier_league.create_player(
+    'Midfielder', 'Jack Grealish', 6, 93, 100000)
+emi_martinez = premier_league.create_player(
+    'Goalkeeper', 'Emi Martinez', 7, 87, 80000)
+cole_palmer = premier_league.create_player(
+    'Midfielder', 'Cole Palmer', 8, 89, 96000)
+joao_pedro = premier_league.create_player(
+    'Striker', 'Joao Pedro', 9, 78, 64000)
 
+# View the league free agents.
+for player in premier_league.get_free_agents():
+    print(player)
 
-# Sign players to their teams
-arsenal.sign_player(goalkeeper)
-arsenal.sign_player(player_1)
+# Sign the players to their teams using the manager capabilities.
+mikel_arteta.sign_player(david_raya)
+mikel_arteta.sign_player(declan_rice)
+mikel_arteta.sign_player(bukayo_saka)
 
-man_utd.sign_player(striker)
+michael_carrick.sign_player(harry_maguire)
 
-chelsea.sign_player(midfielder)
-chelsea.sign_player(defender)
+xabi_alonso.sign_player(jordan_pickford)
+xabi_alonso.sign_player(jack_grealish)
 
+david_moyes.sign_player(emi_martinez)
+david_moyes.sign_player(cole_palmer)
+david_moyes.sign_player(joao_pedro)
 
-# Demonstrate dictionary lookup
-print("Team lookup:")
-print(league.get_team("Arsenal"))
-
-print(league.get_team("Manchester United"))
-
-# Demonstrate list comprehension across all teams
-all_players = league.get_all_players()
-
-print("\nAll players in the league:")
-for player in all_players:
-    print(player.get_name())
-
-match1 = Match(arsenal, man_utd)
-print(match1.simulate())
-
-match2 = Match(arsenal, chelsea)
-print(match2.simulate())
-
-match3 = Match(man_utd, chelsea)
-print(match3.simulate())
-
-print(league.standings())
-
+# The teams and their statistics can then be displayed.
 print(arsenal)
+print(manchester_united)
+print(chelsea)
+print(everton)
 
-league2 = League('League 2')
-print(league2.standings())
+# Some matches can then be simulated.
+MATCHES = [
+    [arsenal, manchester_united], [arsenal, chelsea],
+    [arsenal, everton], [manchester_united, chelsea],
+    [manchester_united, everton], [chelsea, everton]
+]
 
+# Display the simulated outcome for each match.
+for match in MATCHES:
+    result = premier_league.create_match(
+        match[0].team_name, match[1].team_name).simulate()
+    print(result)
 
-
-match7 = Match('Team1', 'Team2')
+# Display the league standings.
+print(premier_league.standings())
