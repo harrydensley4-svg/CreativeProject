@@ -1,4 +1,4 @@
-<diagram program="umletino" version="15.1"><zoom_level>7</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>343</x><y>574</y><w>147</w><h>98</h></coordinates><panel_attributes>Manager
+<diagram program="umletino" version="15.1"><zoom_level>7</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>497</x><y>490</y><w>147</w><h>98</h></coordinates><panel_attributes>Manager
 --
 - name: str
 - team_name: str = None
@@ -7,44 +7,44 @@
 + join_team(team: Team): bool
 + leave_team(): bool
 + sign_player(player: Player): bool
-+ release_player(player: Player): bool</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>511</x><y>511</y><w>147</w><h>77</h></coordinates><panel_attributes>Goalkeeper
++ release_player(player: Player): bool</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>665</x><y>427</y><w>147</w><h>77</h></coordinates><panel_attributes>Goalkeeper
 --
 RATING_GAIN = 2
 STAMINA_COST = 12
 STAMINA_GAIN = 9
 --
 + train(): str
-+ recover(): str</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>826</x><y>511</y><w>147</w><h>77</h></coordinates><panel_attributes>Striker
++ recover(): str</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>980</x><y>427</y><w>147</w><h>77</h></coordinates><panel_attributes>Striker
 --
 RATING_GAIN = 2
 STAMINA_COST = 15
 STAMINA_GAIN = 8
 --
 + train(): str
-+ recover(): str</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>672</x><y>511</y><w>147</w><h>77</h></coordinates><panel_attributes>Defender
++ recover(): str</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>826</x><y>427</y><w>147</w><h>77</h></coordinates><panel_attributes>Defender
 --
 RATING_GAIN = 1
 STAMINA_COST = 6
 STAMINA_GAIN = 3
 --
 + train(): str
-+ recover(): str</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>987</x><y>511</y><w>147</w><h>77</h></coordinates><panel_attributes>Midfielder
++ recover(): str</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1141</x><y>427</y><w>147</w><h>77</h></coordinates><panel_attributes>Midfielder
 --
 RATING_GAIN = 3
 STAMINA_COST = 25
 STAMINA_GAIN = 7
 --
 + train(): str
-+ recover(): str</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>721</x><y>427</y><w>189</w><h>98</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;50;250;50;250;120</additional_attributes></element><element><id>Relation</id><coordinates><x>721</x><y>427</y><w>28</w><h>98</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;50;20;50;20;120</additional_attributes></element><element><id>Relation</id><coordinates><x>574</x><y>427</y><w>168</w><h>98</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>220;10;220;50;10;50;10;120</additional_attributes></element><element><id>Relation</id><coordinates><x>721</x><y>427</y><w>343</w><h>98</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;50;470;50;470;120</additional_attributes></element><element><id>Relation</id><coordinates><x>497</x><y>364</y><w>175</w><h>21</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;230;10</additional_attributes></element><element><id>Relation</id><coordinates><x>413</x><y>455</y><w>21</w><h>133</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;170</additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>329</y><w>308</w><h>77</h></coordinates><panel_attributes>Match
++ recover(): str</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>875</x><y>343</y><w>189</w><h>98</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;50;250;50;250;120</additional_attributes></element><element><id>Relation</id><coordinates><x>875</x><y>343</y><w>28</w><h>98</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;50;20;50;20;120</additional_attributes></element><element><id>Relation</id><coordinates><x>728</x><y>343</y><w>168</w><h>98</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>220;10;220;50;10;50;10;120</additional_attributes></element><element><id>Relation</id><coordinates><x>875</x><y>343</y><w>343</w><h>98</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;50;470;50;470;120</additional_attributes></element><element><id>Relation</id><coordinates><x>651</x><y>280</y><w>175</w><h>21</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;230;10</additional_attributes></element><element><id>Relation</id><coordinates><x>567</x><y>371</y><w>21</w><h>133</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;170</additional_attributes></element><element><id>UMLClass</id><coordinates><x>154</x><y>245</y><w>308</w><h>77</h></coordinates><panel_attributes>Match
 --
 - team_1: Team
 - team_2: Team
 --
 + simulate(): str
 - __team_expected_goals(attacking_team: Team, defending_team: Team): int
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>413</x><y>259</y><w>21</w><h>56</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
-</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>301</x><y>371</y><w>63</w><h>28</h></coordinates><panel_attributes>lt=&lt;-
-m1=2</panel_attributes><additional_attributes>70;10;10;10</additional_attributes></element><element><id>Text</id><coordinates><x>427</x><y>469</y><w>70</w><h>49</h></coordinates><panel_attributes>0..1</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>350</x><y>301</y><w>154</w><h>161</h></coordinates><panel_attributes>Team
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>567</x><y>175</y><w>21</w><h>56</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>455</x><y>287</y><w>63</w><h>28</h></coordinates><panel_attributes>lt=&lt;-
+m1=2</panel_attributes><additional_attributes>70;10;10;10</additional_attributes></element><element><id>Text</id><coordinates><x>581</x><y>385</y><w>70</w><h>49</h></coordinates><panel_attributes>0..1</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>504</x><y>217</y><w>154</w><h>161</h></coordinates><panel_attributes>Team
 --
 - team_name: str
 - team_id: int
@@ -58,7 +58,7 @@ m1=2</panel_attributes><additional_attributes>70;10;10;10</additional_attributes
 --
 + sign_player(player: Player): bool
 + release_player(player: Player): bool
-+ team_rating(): float</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>217</x><y>189</y><w>77</w><h>154</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>90;10;10;10;10;200</additional_attributes></element><element><id>Text</id><coordinates><x>224</x><y>308</y><w>70</w><h>49</h></coordinates><panel_attributes>0..*</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>616</x><y>182</y><w>126</w><h>49</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;160;10;160;50</additional_attributes></element><element><id>Text</id><coordinates><x>728</x><y>196</y><w>70</w><h>49</h></coordinates><panel_attributes>0..*</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>637</x><y>357</y><w>70</w><h>49</h></coordinates><panel_attributes>0..*</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>420</x><y>287</y><w>70</w><h>49</h></coordinates><panel_attributes>0..*</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>427</x><y>553</y><w>70</w><h>49</h></coordinates><panel_attributes>0..1</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>658</x><y>217</y><w>147</w><h>217</h></coordinates><panel_attributes>Player
++ team_rating(): float</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>371</x><y>105</y><w>77</w><h>154</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>90;10;10;10;10;200</additional_attributes></element><element><id>Text</id><coordinates><x>378</x><y>224</y><w>70</w><h>49</h></coordinates><panel_attributes>0..*</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>770</x><y>98</y><w>126</w><h>49</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;160;10;160;50</additional_attributes></element><element><id>Text</id><coordinates><x>882</x><y>112</y><w>70</w><h>49</h></coordinates><panel_attributes>0..*</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>791</x><y>273</y><w>70</w><h>49</h></coordinates><panel_attributes>0..*</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>574</x><y>203</y><w>70</w><h>49</h></coordinates><panel_attributes>0..*</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>581</x><y>469</y><w>70</w><h>49</h></coordinates><panel_attributes>0..1</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>812</x><y>133</y><w>147</w><h>217</h></coordinates><panel_attributes>Player
 --
 - MAX_RATING = 100
 - MAX_STAMINA = 100
@@ -80,7 +80,7 @@ m1=2</panel_attributes><additional_attributes>70;10;10;10</additional_attributes
 + train()
 + recover()
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>280</x><y>84</y><w>343</w><h>182</h></coordinates><panel_attributes>League
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>434</x><y>0</y><w>343</w><h>182</h></coordinates><panel_attributes>League
 --
 - name : str
 - teams: dict[str, Team] = []
